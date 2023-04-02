@@ -17,5 +17,5 @@ def sync_matches():
 
 
 if __name__ == "__main__":
-    # asyncio.run(sync_soccer())
-    pass
+    sync_transfers()
+    sync_matches()
