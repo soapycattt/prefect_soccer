@@ -4,3 +4,4 @@ data/
 .envrc
 *.egg
 *.egg-info
+deployments
