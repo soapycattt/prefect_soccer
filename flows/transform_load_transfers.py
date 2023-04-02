@@ -11,7 +11,7 @@ RAW_DATA_PATH = Path("transfers/raw")
 CLEANED_DATA_PATH = Path("transfers/cleaned")
 
 BUCKET = os.environ.get("BUCKET")
-PROJECT_ID = os.environ.get("PROJECT_ID")
+GOOGLE_CLOUD_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT")
 
 
 def get_bucket():
@@ -59,7 +59,7 @@ def load_to_bq(table: str):
     bq_client = get_bq_client()
 
     try:
-        table_id = f"{PROJECT_ID}.src_eu_football.{table}"
+        table_id = f"{GOOGLE_CLOUD_PROJECT}.src_eu_football.{table}"
         gcs_uri = f"gs://{BUCKET}/eu_football/{CLEANED_DATA_PATH}/*"
 
         job_config = LoadJobConfig(
